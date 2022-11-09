@@ -21,7 +21,7 @@ const Services = () => {
                 }
 
             </div>
-            <Link to='services'><p className='text-center'><button className="btn btn-primary">See all</button></p></Link>
+            <Link to='services'><p className='text-center '><button className="btn btn-primary px-10">See all</button></p></Link>
         </div>
     );
 };

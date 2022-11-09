@@ -1,14 +1,16 @@
 import React from 'react';
 
 const ServiceCard = ({ service }) => {
+    const { _id, title, price, img, description } = service;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <figure className='h-80'><img src={img} alt="images" /></figure>
             <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{title}</h2>
+                <p className='text-orange-500 font-bold'>${price}</p>
+                <p title='read more by clicking button'>{description.slice(0, 100)}...</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary">View Details</button>
                 </div>
             </div>
         </div>
