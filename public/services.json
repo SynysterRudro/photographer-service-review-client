@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "635a0c0b64a6d231228942ae",
+        "title": "Sports Photography",
+        "price": "300",
+        "img": "https://i.ibb.co/tXcPW7b/sports.jpg",
+        "description": "Sport is a dominant force in people's lives. It's an obsession for millions all over the world. They watch events on TV, fill stadiums, and lace up their boots to play. From football to table tennis, we all love sports.Sports photography is an essential element of our sporting culture. Sports photographers capture the biggest moments and document the most famous sports stars.Sports photography isn't easy. Much like sport, it takes skill, knowledge, and practice to master. Expert Photography will give you all the skills and knowledge you need to master sports photography. Then you just need to practice."
+    },
+    {
+        "_id": "635a0c0b64a6d231228942af",
+        "title": "Wedding Photography",
+        "price": "150",
+        "img": "https://i.ibb.co/kBx1C7W/wedding.jpg",
+        "description": "Your wedding invitations are like the prelude to the perfect wedding movie! It's where it all starts. Once everything is booked - your venue, vendors and all the shopping done, it all begins. You start designing your wedding invitations and start the progression of inviting your loved ones to your dream day. But when do you exactly invite people? When do you send the save-the-date card? What about digital invites? We've got it all down for you. Here's the perfect timeline for how and when you start distributing your lovely wedding invites."
+    },
+    {
+        "_id": "635a0c0b64a6d231228942ag",
+        "title": "Wedding Photography",
+        "price": "500",
+        "img": "https://i.ibb.co/XCbQ33W/wildlife.jpg",
+        "description": "The world is full of beauty. Beauty that excites you, thrills you, and sends prominent frisson waves all through your body. And the greatest source of all this awe-inspiring pulchritude is nature itself. So if you're one of those who have a penchant for exploring the woods but cannot do so due to the bureaucratic worlds constraints, purge your tension - Wildnest has the panacea: a meticulous list of the world's top 10 wildlife photography blogs, for you to escape from a dreary office cubicle to a vivid, enthralling world."
+    },
+    {
+        "_id": "635a0c0b64a6d231228942ah",
+        "title": "Musical event Photography",
+        "price": "350",
+        "img": "https://i.ibb.co/FJxyX00/musical.jpg",
+        "description": "So, I'm a lifelong musician/music lover/creative person (I can't think of anything else to say to be perfectly honest) who was exposed to a lot of music from an early age through the radio in my home area of DC/suburban Maryland and through my dads CD and record collection. I've played music for a long time and started writing about music when I was a senior in college (better late than never) for a publication at BC called the Gavel."
+    },
+    {
+        "_id": "635a0c0b64a6d231228942ai",
+        "title": "Casual Photography",
+        "price": "50",
+        "img": "https://i.ibb.co/b6Vf1x4/casual.jpg",
+        "description": "Photo mania has been a trusted photography blog for over 20 years. Readers enjoy learning about many aspects of photography, including photography ideas, photography tips, landscape photography, gear reviews, and much more! The best part is that the articles are written by professional photographers who have a passion and love for their camera that they want to share with the world. The photo blogs are easy to read, and they even offer a variety of digital photography school courses that are free and paid!"
+    },
+    {
+        "_id": "635a0c0b64a6d231228942aj",
+        "title": "Food Photography",
+        "price": "200",
+        "img": "https://i.ibb.co/x2p4N3q/food.jpg",
+        "description": "This is more than just a blog as you will soon discover. I've got resources for photogs at every level. I can help you buy your first camera or help you figure out how to get food photography clients. I'm Rudro and I've been a commercial food photographer for more than 25 years. I shoot all over the country and still love what I do. Scroll on down to see all that I have just for you."
+    }
+]
