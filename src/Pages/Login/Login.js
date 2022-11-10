@@ -1,12 +1,22 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth'
+import { FaGoogle } from "react-icons/fa";
+
+
+const googleProvider = new GoogleAuthProvider();
 
 const Login = () => {
 
-    const { emailPasswordLogin } = useContext(AuthContext);
+    // navigation 
+    const navigate = useNavigate();
+
+    const { emailPasswordLogin, googleLogin } = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
 
+
+    // email password login 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -17,7 +27,21 @@ const Login = () => {
         emailPasswordLogin(email, password)
             .then(result => {
                 const user = result.user;
+                setErrorMessage('');
                 console.log(user);
+                navigate('/');
+            })
+            .catch(err => setErrorMessage(err.message))
+    }
+
+    // google login 
+    const loginUsingGoogle = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                setErrorMessage('');
+                console.log(user);
+                navigate('/');
             })
             .catch(err => setErrorMessage(err.message))
     }
@@ -28,6 +52,12 @@ const Login = () => {
                 <div className="text-center lg:text-left w-1/2">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                     <p className="py-6">Welcome to Photo Mania. Our authentication system is very good because we are using google firebase which is maintained by google and I can assure you that you can trust google surely.</p>
+
+                    <h2 className="text-3xl">
+                        Or log in using Google
+                        <br />
+                        <button onClick={loginUsingGoogle}><FaGoogle className='my-4 hover:text-violet-500 font-bold'></FaGoogle></button>
+                    </h2>
                 </div>
                 <div className="card  flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">

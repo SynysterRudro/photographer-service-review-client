@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
 
     // error messages state 
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
     const { createUser } = useContext(AuthContext);
     const handleSignUp = event => {
@@ -18,7 +19,9 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                setErrorMessage('');
                 console.log(user);
+                navigate('/');
             })
             .catch(err => setErrorMessage(err.message))
         // console.log(name, email, password);
