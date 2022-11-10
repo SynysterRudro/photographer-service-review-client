@@ -44,7 +44,7 @@ const Header = () => {
             {
                 user?.uid ?
                     <>
-                        <p className='mx-2'>{user?.email}</p>
+                        <img className='rounded-full ' src={user?.photoURL} alt="img" />
                         <button onClick={handleLogOut} className="btn"> Logout</button>
                     </>
                     :
