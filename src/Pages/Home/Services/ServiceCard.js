@@ -2,6 +2,7 @@ import React from 'react';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Link } from 'react-router-dom';
 
 
 const ServiceCard = ({ service }) => {
@@ -17,8 +18,8 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <p className='text-orange-500 font-bold'>${price}</p>
                 <p title='read more by clicking button'>{description.slice(0, 100)}...</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">View Details</button>
+                <div className="card-actions justify-start">
+                    <Link to={`/services/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>
