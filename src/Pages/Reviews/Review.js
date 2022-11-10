@@ -6,7 +6,8 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 // single review page 
-const Review = ({ review }) => {
+const Review = ({ review, _id }) => {
+    console.log(_id);
 
     const { user } = useContext(AuthContext);
     return (
@@ -30,7 +31,7 @@ const Review = ({ review }) => {
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-400">
-                <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
+                <p>{review?.description}</p>
             </div>
         </div>
     );
