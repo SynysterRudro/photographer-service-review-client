@@ -5,17 +5,18 @@ import WriteReview from './WriteReview';
 import Review from './Review';
 
 // review sections 
-const Reviews = () => {
+const Reviews = ({ _id }) => {
 
+    console.log(_id);
 
 
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/reviews?service_id=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(err => console.error(err))
-    }, [])
+    }, [_id])
     return (
         <div className='my-9'>
             <h2 className="text-5xl text-orange-500 text-center font-bold mb-2">Total Reviews - {reviews.length}</h2>

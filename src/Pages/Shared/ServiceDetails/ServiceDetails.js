@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -8,7 +8,12 @@ import Reviews from '../../Reviews/Reviews';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
-    const { title, price, img, description } = service;
+    const { title, price, img, description, _id } = service;
+    // console.log(_id);
+
+
+
+
     return (
         <div className='my-9'>
             <h2 className="text-5xl text-orange-500 text-center mb-5 font-bold">Service Details</h2>
@@ -28,7 +33,9 @@ const ServiceDetails = () => {
                 </div>
             </div>
 
-            <Reviews></Reviews>
+            <Reviews
+                _id={_id}
+            ></Reviews>
         </div>
     );
 };
