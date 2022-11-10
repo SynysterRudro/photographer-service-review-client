@@ -8,11 +8,12 @@ const Signup = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateNamePhoto } = useContext(AuthContext);
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
-        // const name = form.name.value;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -20,6 +21,12 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 setErrorMessage('');
+
+                updateNamePhoto(name, photo)
+                    .then(res => {
+                    })
+                    .catch(err => console.error(err))
+
                 console.log(user);
                 navigate('/');
             })
@@ -42,19 +49,25 @@ const Signup = () => {
                                 <label className="label">
                                     <span className="label-text">UserName</span>
                                 </label>
-                                <input name='name' type="text" placeholder="username" className="input input-bordered" />
+                                <input name='name' type="text" placeholder="username" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input name='photo' type="text" placeholder="photoURL" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input name='email' type="email" placeholder="email" className="input input-bordered" />
+                                <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' type="password" placeholder="password" className="input input-bordered" />
+                                <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <p className='mt-2'>Already Have an account?
                                         <Link to='/login' className="label-text-alt text-sm link ml-2 link-hover">Login instead </Link></p>

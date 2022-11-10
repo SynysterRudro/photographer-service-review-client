@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
+import Reviews from '../../Reviews/Reviews';
 
 const ServiceDetails = () => {
     const service = useLoaderData();
@@ -26,6 +27,8 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
+
+            <Reviews></Reviews>
         </div>
     );
 };

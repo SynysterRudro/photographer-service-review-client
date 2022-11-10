@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
-    console.log(user.email);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+
+            })
+            .catch(err => console.error(err))
+    }
+
+    // console.log(user);
     return (<div className="navbar bg-base-100">
         <div className="navbar-start">
             <div className="dropdown">
@@ -13,9 +22,13 @@ const Header = () => {
                 </label>
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a>Blogs</a></li>
-                    <li><a>My Reviews</a></li>
-                    <li><a>Add Services</a></li>
-                    <li><a>{user?.displayName}</a></li>
+                    {
+                        user?.uid ? <>
+                            <li><a>My Reviews</a></li>
+                            <li><a>Add Services</a></li>
+                        </> :
+                            <></>
+                    }
 
                 </ul>
             </div>
@@ -24,13 +37,26 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
                 <li><a>Blogs</a></li>
-                <li><a>My Reviews</a></li>
-                <li><a>Add Services</a></li>
+                {
+                    user?.uid ? <>
+                        <li><a>My Reviews</a></li>
+                        <li><a>Add Services</a></li>
+                    </> :
+                        <></>
+                }
 
             </ul>
         </div>
         <div className="navbar-end">
-            <Link to='/login' className="btn">Login</Link>
+            {
+                user?.uid ?
+                    <>
+                        <p className='mx-2'>{user?.email}</p>
+                        <button onClick={handleLogOut} className="btn"> Logout</button>
+                    </>
+                    :
+                    <Link to='/login' className="btn">Login</Link>
+            }
         </div>
     </div>
     );
