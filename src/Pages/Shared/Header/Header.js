@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user.email);
     return (<div className="navbar bg-base-100">
         <div className="navbar-start">
             <div className="dropdown">
@@ -12,6 +15,7 @@ const Header = () => {
                     <li><a>Blogs</a></li>
                     <li><a>My Reviews</a></li>
                     <li><a>Add Services</a></li>
+                    <li><a>{user?.displayName}</a></li>
 
                 </ul>
             </div>
