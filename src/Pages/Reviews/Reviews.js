@@ -4,6 +4,7 @@ import WriteReview from './WriteReview';
 
 import Review from './Review';
 
+// review sections 
 const Reviews = () => {
 
 

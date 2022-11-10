@@ -7,6 +7,8 @@ import Services from "../../Pages/Services/Services";
 import ServiceDetails from "../../Pages/Shared/ServiceDetails/ServiceDetails";
 import Signup from "../../Pages/Signup/Signup";
 
+
+// setting up routes 
 export const router = createBrowserRouter([
     {
         path: '/',

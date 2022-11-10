@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 
+// single review page 
 const Review = ({ review }) => {
 
     const { user } = useContext(AuthContext);
