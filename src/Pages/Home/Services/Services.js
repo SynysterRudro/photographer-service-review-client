@@ -14,7 +14,7 @@ const Services = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesLimit')
+        fetch('https://photographer-service-review-server-nb3pfkb2i-synysterrudro.vercel.app/servicesLimit')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

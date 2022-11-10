@@ -4,8 +4,8 @@ A review service
 
 
 ## Live Link
-Hosted in Firebase -> [PhotoMania] - 
-Server hosted in   -> 
+Hosted in Firebase -> [PhotoMania] - https://photo-mania-98f2f.web.app/
+Server hosted in   -> https://photographer-service-review-server-nb3pfkb2i-synysterrudro.vercel.app/
 
 
  ## Features and functionalities of this project

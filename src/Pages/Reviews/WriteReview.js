@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
@@ -12,7 +12,7 @@ const WriteReview = ({ _id }) => {
 
     // review 
 
-
+    const navigate = useNavigate();
 
 
     const handleForm = event => {
@@ -21,29 +21,36 @@ const WriteReview = ({ _id }) => {
         const message = form.message.value;
 
 
-        const review = {
-            service_id: _id,
-            displayName: user?.displayName,
-            photoURL: user?.photoURL,
-            description: message,
-            email: user?.email
+        if (user?.uid) {
+            const review = {
+                service_id: _id,
+                displayName: user?.displayName,
+                photoURL: user?.photoURL,
+                description: message,
+                email: user?.email
+            }
+
+            fetch('https://photographer-service-review-server-nb3pfkb2i-synysterrudro.vercel.app/reviews', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(review)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+                    if (data.acknowledged) {
+                        alert('Review added');
+                    }
+                })
+
+
         }
 
-        fetch('http://localhost:5000/reviews', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
-        })
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                if (data.acknowledged) {
-                    alert('Review added');
-                }
-            })
-
+        else {
+            navigate('/login');
+        }
 
         // console.log(review);
 
