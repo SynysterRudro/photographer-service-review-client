@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ServiceCard from '../Home/Services/ServiceCard';
+import Spinner from '../Shared/Spinner/Spinner';
 
 const Services = () => {
 
+    // loading for spinner 
+    const { loading } = useContext(AuthContext)
     // adding services 
     const [services, setServices] = useState([]);
     useEffect(() => {
@@ -13,6 +18,12 @@ const Services = () => {
 
     return (
         <div className='my-9'>
+
+
+            {
+                loading ? <Spinner></Spinner> : <></>
+            }
+
             <h2 className="text-5xl text-orange-500 text-center font-bold">Services</h2>
             <div className='w-11/12 mx-auto grid gap-6 my-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {/* mapping each services  */}

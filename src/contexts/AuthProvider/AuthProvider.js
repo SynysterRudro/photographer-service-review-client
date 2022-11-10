@@ -20,11 +20,13 @@ const AuthProvider = ({ children }) => {
     // logging in user 
 
     const emailPasswordLogin = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     // google login 
     const googleLogin = (provider) => {
+        setLoading(true);
         return signInWithPopup(auth, provider);
     }
 
@@ -40,6 +42,7 @@ const AuthProvider = ({ children }) => {
 
     // updating profile 
     const updateNamePhoto = (name, photo) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo
@@ -59,7 +62,8 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         user,
         updateNamePhoto,
-        logOut
+        logOut,
+        loading
     };
     return (
         <AuthContext.Provider value={authInfo}>
