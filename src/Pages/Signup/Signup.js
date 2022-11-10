@@ -51,7 +51,7 @@ const Signup = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' type="text" placeholder="password" className="input input-bordered" />
+                                <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <p className='mt-2'>Already Have an account?
                                         <Link to='/login' className="label-text-alt text-sm link ml-2 link-hover">Login instead </Link></p>
@@ -61,7 +61,8 @@ const Signup = () => {
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        {errorMessage && <p className='text-red-600 text-center py-2'>{errorMessage}</p>}
+                        {errorMessage && <p className='text-red-600 text-center py-2'>{errorMessage}</p>
+                        }
                     </div>
                 </div>
             </div>
